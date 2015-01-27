@@ -6,3 +6,6 @@ get '/' do
   erb :index #view index in embeddable ruby
 end
 
+get '/contacts' do # Create a new route the request /contacts and return an erb view
+  erb :contacts
+end
