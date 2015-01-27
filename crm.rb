@@ -2,6 +2,8 @@ require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
 
+$rolodex = Rolodex.new # Create a global variable to be available through out the app
+
 # Route to request and respond with Main Menu
 get '/' do
 	@crm_app_name = "My CRM" #set up instance variable
@@ -9,11 +11,6 @@ get '/' do
 end
 
 get '/contacts' do # Create a new route the request /contacts and return an erb view
-  @contacts = [] # Create some fake contacts data
-  @contacts << Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer")
-  @contacts << Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO")
-  @contacts << Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder")
-
   erb :contacts
 end
 
