@@ -1,5 +1,7 @@
 require 'sinatra'
 
+# Route to request and respond with Main Menu
 get '/' do
-  "Main Menu"
+  erb :index #view index in embeddable ruby
 end
+
