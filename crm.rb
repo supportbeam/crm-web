@@ -18,3 +18,10 @@ get '/contacts/new' do  #GET route to display the form that will let us enter an
   erb :new_contact
 end
 
+post '/contacts' do #using the POST method so that we can submit data to our server
+  #puts params
+  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+  $rolodex.add_contact(new_contact)
+  redirect to('/contacts')
+end
+
