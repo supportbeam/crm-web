@@ -1,7 +1,8 @@
 class Rolodex #database of contacts
+  attr_accessor(:contacts)
 
   @@ids = 1 # @@: class variable value that is constant to all class instances
-	def initialize
+  def initialize
     @contacts = []
   end
 
@@ -28,7 +29,7 @@ class Rolodex #database of contacts
   end
 
   def display_contacts
-    @contacts.each { |c| c }
+    @contacts
   end
 
   def display_contact(id)
