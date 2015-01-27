@@ -8,6 +8,11 @@ get '/' do
 end
 
 get '/contacts' do # Create a new route the request /contacts and return an erb view
+  @contacts = [] # Create some fake contacts data
+  @contacts << Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer")
+  @contacts << Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO")
+  @contacts << Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder")
+
   erb :contacts
 end
 
