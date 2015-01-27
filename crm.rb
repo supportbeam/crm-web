@@ -14,7 +14,7 @@ get '/contacts' do # Create a new route the request /contacts and return an erb 
   erb :contacts
 end
 
-get '/contacts/new' do
+get '/contacts/new' do  #GET route to display the form that will let us enter and submit our data
   erb :new_contact
 end
 
