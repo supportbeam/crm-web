@@ -13,11 +13,15 @@ a {
 }
 
 a:hover {
-
+	color: blue;
 }
 
 a:visited {
 	color: grey;
+}
+
+header {
+	text-align: center;
 }
 
 nav {
@@ -27,6 +31,7 @@ nav {
 	padding: 10px;
 	color: ;
 	margin-bottom: 2em;
+	text-align: center
 }
 
 footer {
@@ -36,6 +41,7 @@ footer {
 	padding: 10px;
 	color: ;
 	margin-top: 2em;
+	text-align: center
 }
 
 ul {
