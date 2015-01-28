@@ -7,14 +7,17 @@ $rolodex = Rolodex.new # Create a global variable to be available through out th
 # Route to request and respond with Main Menu
 get '/' do
 	@crm_app_name = "My CRM" #set up instance variable
+	@title = "MY CRM"
   erb :index #view index in embeddable ruby
 end
 
 get '/contacts' do # Create a new route the request /contacts and return an erb view
+  @title = "Display Contacts"
   erb :contacts
 end
 
 get '/contacts/new' do  #GET route to display the form that will let us enter and submit our data
+  @title = "Create a New Contact"
   erb :new_contact
 end
 
