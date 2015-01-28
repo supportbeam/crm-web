@@ -1,7 +1,10 @@
 <form action="/contacts" method="post">
-  <input type="text" name="first_name">
-  <input type="text" name="last_name">
-  <input type="text" name="email">
-  <input type="text" name="note">
+<fieldset>
+<legend>Contact Info</legend>
+  <p><label class="field" for="first_name">First name: </label><input type="text" name="first_name"></p>
+  <p><label class="field" for ="last_name">Last name: </label><input type="text" name="last_name"></p>
+  <p><label class="field" for ="email">Email: </label><input type="text" name="email"></p>
+  <p><label class="field" for="note">Note: </label><input type="text" name="note"></p>
   <input type="submit" name="Submit">
+  </fieldset>
 </form>

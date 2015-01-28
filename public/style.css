@@ -1,0 +1,57 @@
+* {
+	font-family: Verdana;
+}
+
+body {
+	background-color: ;
+	width: 600px;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+
+}
+
+a:visited {
+	color: grey;
+}
+
+nav {
+	border: solid 2px black;
+	background-color: ;
+	border-radius: 5px;
+	padding: 10px;
+	color: ;
+	margin-bottom: 2em;
+}
+
+footer {
+	border: solid 2px black;
+	background-color: ;
+	border-radius: 5px;
+	padding: 10px;
+	color: ;
+	margin-top: 2em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline;
+}
+
+label.field {
+	text-align: right;
+	width: 100px;
+	float: left;
+}
+
+legend {
+	font-size: 20px;
+}

@@ -2,24 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title><%= @title %></title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title><%= @page %></title>
 	</head>
 	<body>
     <header>
-      <h1><%= @title %></h1>
+      <h1>My CRM</h1>
     </header>
 
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
+        <li><a href="/contacts">View Contacts</a></li>
+        <li><a href="/contacts/new">Add Contact</a></li>
+        <li><a href="/contacts/delete">Delete Contact</a></li>
       </ul>
     </nav>
 
-		<%= yield %>
+    <section>
+      <h2><%= @page %></h2>
+		  <%= yield %>
+    </section>
 
     <footer>
       <p>CRM &copy; 2015</p>
     </footer>
-    
+
 	</body>
 </html>
