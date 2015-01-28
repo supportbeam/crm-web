@@ -12,7 +12,7 @@ get '/' do
 end
 
 get '/contacts' do # Create a new route the request /contacts and return an erb view
-  @title = "Display Contacts"
+  @title = "All Contacts"
   erb :contacts
 end
 

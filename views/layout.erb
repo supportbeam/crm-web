@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title><%= @title %></title>
-</head>
-<body>
-	<%= yield %>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title><%= @title %></title>
+	</head>
+	<body>
+    <header>
+      <h1><%= @title %></h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+
+		<%= yield %>
+
+    <footer>
+      <p>CRM &copy; 2015</p>
+    </footer>
+    
+	</body>
 </html>
