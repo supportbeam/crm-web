@@ -49,3 +49,17 @@ get "/contacts/:id/edit" do # Request to edit an existing contact by id
     raise Sinatra::NotFound # else show the 404 error
   end
 end
+
+put "/contacts/:id" do #Create a route for a put request form submission
+  @contact = $rolodex.display_contact(params[:id].to_i)
+  if @contact #if the contact exists, update 
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.note = params[:note]
+
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
