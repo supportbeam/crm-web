@@ -63,3 +63,13 @@ put "/contacts/:id" do #Create a route for a put request form submission
     raise Sinatra::NotFound
   end
 end
+
+delete "/contacts/:id" do #Route to handle delete contact request
+  @contact = $rolodex.display_contact(params[:id].to_i)
+  if @contact
+    $rolodex.delete_contact(@contact)
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end

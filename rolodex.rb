@@ -50,11 +50,8 @@ class Rolodex #database of contacts
     end
   end
 
-  def delete_contact(id)
-    del = display_contact(id)
-    @contacts.delete(del)
-        # @contacts.find do |contact| 
-    #   @contacts.delete(id) if contact.id == id
+  def delete_contact(contact)
+    @contacts.delete(contact)
   end
 
 end
