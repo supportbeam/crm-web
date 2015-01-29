@@ -52,6 +52,10 @@ li {
 	display: inline;
 }
 
+fieldset {
+	
+}
+
 label.field {
 	text-align: right;
 	width: 100px;
