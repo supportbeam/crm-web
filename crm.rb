@@ -34,9 +34,18 @@ end
 
 get "/contacts/:id" do
   @contact = $rolodex.display_contact(params[:id].to_i)
-  if @contact
-    erb :show_contact
+  if @contact #if the contact exists
+    erb :show_contact #show the webpage
   else
-    raise Sinatra::NotFound
+    raise Sinatra::NotFound #show the 404 error if the contact does not exist
+  end
+end
+
+get "/contacts/:id/edit" do # Request to edit an existing contact by id
+  @contact = $rolodex.display_contact(params[:id].to_i) #find the contact by id
+  if @contact
+    erb :edit_contact #if the contact exists, show the edit page
+  else
+    raise Sinatra::NotFound # else show the 404 error
   end
 end
