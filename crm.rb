@@ -4,6 +4,11 @@ require 'sinatra'
 
 $rolodex = Rolodex.new # Create a global variable to be available through out the app
 
+
+# Temporary fake data so that we always find contact with id 1000.
+$rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
+
+
 # Route to request and respond with Main Menu
 get '/' do
   @page = "Welcome!" #set up instance variable
@@ -27,3 +32,7 @@ post '/contacts' do #using the POST method so that we can submit data to our ser
   redirect to('/contacts')
 end
 
+get "/contacts/1000" do
+  @contact = $rolodex.display_contact(1000)
+  erb :show_contact
+end
