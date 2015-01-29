@@ -2,6 +2,7 @@
 <p><strong>Email:</strong> <%= @contact.email %></p>
 <p><strong>Note:</strong></p>
 <p><%= @contact.note %></p>
+<div><a href="/contacts/<%= @contact.id %>/edit">Edit Contact Info</a></div>
 
 <form action="/contacts/<%= @contact.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

@@ -4,11 +4,6 @@ require 'sinatra'
 
 $rolodex = Rolodex.new # Create a global variable to be available through out the app
 
-
-# Temporary fake data so that we always find contact with id 1000.
-$rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
-
-
 # Route to request and respond with Main Menu
 get '/' do
   @page = "Welcome!" #set up instance variable
