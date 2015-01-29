@@ -32,7 +32,11 @@ post '/contacts' do #using the POST method so that we can submit data to our ser
   redirect to('/contacts')
 end
 
-get "/contacts/1000" do
-  @contact = $rolodex.display_contact(1000)
-  erb :show_contact
+get "/contacts/:id" do
+  @contact = $rolodex.display_contact(params[:id].to_i)
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
