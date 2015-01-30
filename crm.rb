@@ -88,7 +88,7 @@ delete "/contacts/:id" do #Route to handle delete contact request
   @page = "Contact Details"
   @contact = Contact.get(params[:id].to_i)
   if @contact
-    $rolodex.delete_contact(@contact)
+    @contact.destroy
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
