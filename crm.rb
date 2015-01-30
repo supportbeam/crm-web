@@ -1,6 +1,11 @@
 require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
+require 'data_mapper'
+
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+# your routes below
 
 $rolodex = Rolodex.new # Create a global variable to be available through out the app
 
