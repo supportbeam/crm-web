@@ -1,9 +1,24 @@
 require_relative 'rolodex'
-require_relative 'contact'
 require 'sinatra'
 require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+class Contact
+  include DataMapper::Resource
+
+  #Properties set up getter and setter methods
+  #define a property with name of the column as a symbol and the data type it requires
+  property :id, Serial # Serial is a type of integer that automatically increments
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :note, String
+end
+
+DataMapper.finalize # validate any issues with properties or tables defined
+DataMapper.auto_upgrade! # Effects any changes to the underlying structure of the tables/columns
+
 
 # your routes below
 
