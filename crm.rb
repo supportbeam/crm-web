@@ -62,7 +62,7 @@ get "/contacts/:id" do
 end
 
 get "/contacts/:id/edit" do # Request to edit an existing contact by id
-  @contact = $rolodex.display_contact(params[:id].to_i) #find the contact by id
+  @contact = Contact.get(params[:id].to_i) #find the contact by id
   if @contact
     erb :edit_contact #if the contact exists, show the edit page
   else
