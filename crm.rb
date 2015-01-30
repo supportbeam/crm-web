@@ -53,7 +53,7 @@ post '/contacts' do #using the POST method so that we can submit data to our ser
 end
 
 get "/contacts/:id" do
-  @contact = $rolodex.display_contact(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i) # get is a DataMapper method to return the contact object
   if @contact #if the contact exists
     erb :show_contact #show the webpage
   else
