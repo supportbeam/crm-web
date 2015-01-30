@@ -32,6 +32,7 @@ end
 
 get '/contacts' do # Create a new route the request /contacts and return an erb view
   @page = "All Contacts"
+  @contacts = Contact.all # .all is a DataMapper method to retreive all records in the database
   erb :contacts
 end
 
@@ -42,8 +43,12 @@ end
 
 post '/contacts' do #using the POST method so that we can submit data to our server
   #puts params
-  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-  $rolodex.add_contact(new_contact)
+   contact = Contact.create( # .create is a DataMapper method that expects a hash to add to the database
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :note => params[:note]
+  )
   redirect to('/contacts')
 end
 

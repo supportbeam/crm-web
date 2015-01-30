@@ -1,5 +1,5 @@
 <ul>
-  <% $rolodex.contacts.each do |contact| %> 
+  <% @contacts.each do |contact| %> 
   <li><p><strong>Name: </strong><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></p>
   <p><strong>Email: </strong><%= contact.email %></p>
   <p><strong>Note: </strong><%= contact.note%></p></li>
