@@ -70,14 +70,14 @@ get "/contacts/:id/edit" do # Request to edit an existing contact by id
   end
 end
 
-put "/contacts/:id" do #Create a route for a put request form submission
-  @contact = $rolodex.display_contact(params[:id].to_i)
-  if @contact #if the contact exists, update 
+put "/contacts/:id" do #Create a route for a put request form submission from edit
+  @contact = Contact.get(params[:id].to_i)
+  if @contact #if the contact exists, update
     @contact.first_name = params[:first_name]
     @contact.last_name = params[:last_name]
     @contact.email = params[:email]
     @contact.note = params[:note]
-
+    @contact.save # Save in database
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
@@ -86,7 +86,7 @@ end
 
 delete "/contacts/:id" do #Route to handle delete contact request
   @page = "Contact Details"
-  @contact = $rolodex.display_contact(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     $rolodex.delete_contact(@contact)
     redirect to("/contacts")
