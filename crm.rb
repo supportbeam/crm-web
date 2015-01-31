@@ -1,4 +1,3 @@
-require_relative 'rolodex'
 require 'sinatra'
 require 'data_mapper'
 
@@ -19,14 +18,8 @@ end
 DataMapper.finalize # validate any issues with properties or tables defined
 DataMapper.auto_upgrade! # Effects any changes to the underlying structure of the tables/columns
 
-
-# your routes below
-
-$rolodex = Rolodex.new # Create a global variable to be available through out the app
-
-# Route to request and respond with Main Menu
-get '/' do
-  @page = "Welcome!" #set up instance variable
+get '/' do # Route to request to main page
+  @page = "Welcome!"
   erb :index #view index in embeddable ruby
 end
 
@@ -42,7 +35,6 @@ get '/contacts/new' do  #GET route to display the form that will let us enter an
 end
 
 post '/contacts' do #using the POST method so that we can submit data to our server
-  #puts params
    contact = Contact.create( # .create is a DataMapper method that expects a hash to add to the database
     :first_name => params[:first_name],
     :last_name => params[:last_name],
